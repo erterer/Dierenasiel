@@ -1,0 +1,87 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+}
+
+.alinea1, .alinea2, li {
+    font-size: 14px;
+    width: 50%;
+}
+
+a{
+    text-decoration: none;
+    color : #339933;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.titel{
+    text-align: center;
+}
+
+.tabelHond, .tabelKat{
+    text-align: left;
+
+}
+
+td, tr{
+    width: 100px;
+}
+
+label {
+    width: 200px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+input {
+    font-size: 14px;
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    color: white;
+    font-weight: bold;
+    background-color: #3366cc;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+
+p{
+    display: inline-block;
+    color: red;
+}
+
+#p1:hover{
+    display: inline-block;
+    color: red;
+}
+
+#p2:hover{
+    display: inline-block;
+    color: red;
+}
+
+.resethond, .resetkat {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    background-color: #3366cc;   
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+    
+
+    
