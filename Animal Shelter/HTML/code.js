@@ -1,6 +1,24 @@
 function OnReady() {
   console.log('Pagina geladen, DOM klaar voor gebruik.');
     $('p').addClass('hidden');
+    
+    // refreshen van Honden uit Localstorage
+    var dog_list = JSON.parse(localStorage.getItem('dogs'));
+    if (Array.isArray(dog_list)) {
+        for (var i = 0; i < dog_list.length; ++i) {
+            var dog = dog_list[i];
+            $('#hondtabel').find('tbody:last').append('<tr><td>' + dog.name + '</td><td>' + dog.age + '</td><td>' + dog.regnr + '</td><td>' + dog.reserved + '</td></tr>');
+        }
+    }
+    
+    // refreshen van Katten uit Localstorage
+    var cat_list = JSON.parse(localStorage.getItem('cats'));
+    if (Array.isArray(cat_list)) {
+        for (var i = 0; i < cat_list.length; ++i) {
+            var cat = cat_list[i];
+            $('#kattabel').find('tbody:last').append('<tr><td>' + cat.name + '</td><td>' + cat.age + '</td><td>' + cat.regnr + '</td><td>' + cat.reserved + '</td></tr>');
+        }
+    } 
 }
 $(document).ready(OnReady);
 
@@ -73,7 +91,18 @@ function OnSubmit(event) {
                             {
                                 if(animal.reserved == "True" || animal.reserved == "False")
                                     {
-                                        
+                                        alert("soort: " + animal.species + '\n' + 
+                              "naam: " + animal.name + '\n' +
+                              "leeftijd: " + animal.age + '\n' + 
+                              "Reg Nr: " + animal.regnr + '\n' +
+                              "Gereserveerd: " + animal.reserved + '\n' + '\n' + "... is succesvol toegevoegd!");
+                        
+                        var dog_list = JSON.parse(localStorage.getItem('dogs'));
+                        if (!Array.isArray(dog_list)) {
+                            dog_list = [];
+                        }
+                        dog_list.push(animal);
+                        localStorage.setItem('dogs', JSON.stringify(dog_list)); 
                                     }
                                 else
                                 {
@@ -109,7 +138,18 @@ function OnSubmit(event) {
                             {
                                 if(animal.reserved == "True" || animal.reserved == "False")
                                     {
-                                        
+                                        alert("soort: " + animal.species + '\n' + 
+                              "naam: " + animal.name + '\n' +
+                              "leeftijd: " + animal.age + '\n' + 
+                              "Reg Nr: " + animal.regnr + '\n' +
+                              "Gereserveerd: " + animal.reserved + '\n' + '\n' + "... is succesvol toegevoegd!");
+                        
+                        var cat_list = JSON.parse(localStorage.getItem('cats'));
+                        if (!Array.isArray(cat_list)) {
+                            cat_list = [];
+                        }
+                        cat_list.push(animal);
+                        localStorage.setItem('cats', JSON.stringify(cat_list)); 
                                     }
                                 else
                                 {
